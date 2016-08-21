@@ -19,15 +19,14 @@ public class RCTSplashScreenPackage implements ReactPackage {
     private Activity activity;
     private RCTSplashScreen splashScreenModule;
 
-    public RCTSplashScreenPackage(Activity activity) {
+    public RCTSplashScreenPackage() {
         super();
-        this.activity = activity;
     }
 
 
     @Override
     public List<NativeModule> createNativeModules(ReactApplicationContext reactContext) {
-        splashScreenModule = new RCTSplashScreen(reactContext, activity);
+        splashScreenModule = new RCTSplashScreen(reactContext);
         return Arrays.<NativeModule>asList(
                 splashScreenModule
         );
